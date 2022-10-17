@@ -1,0 +1,24 @@
+syntax = "proto3";
+package node_ast;
+
+// 属性
+message Attr {
+    // 属性key
+    string key = 1;
+    // 属性值
+    string value = 2;
+}
+
+// 节点
+message NodeAst {
+    // 标签
+    string tag = 1;
+    // 是否是静态节点
+    optional bool isStatic = 2;
+    // 属性
+    repeated Attr attrs = 3;
+    // 事件
+    repeated string events = 4;
+    // 子节点
+    repeated NodeAst children = 5;
+}
