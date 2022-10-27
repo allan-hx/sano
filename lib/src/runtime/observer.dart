@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 import 'js_value.dart';
 
 class Observer {

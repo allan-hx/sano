@@ -27,8 +27,10 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     final bundle = NetworkBundle(
-      // url: 'http://192.168.3.54:8080/assets.zip',
-      url: 'http://192.168.5.110:8082/assets.zip',
+      // url: 'http://192.168.3.54:3030/assets.zip',
+      // url: 'http://192.168.5.110:3030/assets.zip',
+      // url: 'http://192.168.3.54:3030/main.js',
+      url: 'http://192.168.5.110:3030/main.js',
       version: '1.0.0',
     );
 
@@ -45,6 +47,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Plugin example app'),
+        actions: const [],
       ),
       body: const Center(
         child: Text('Running on\n'),

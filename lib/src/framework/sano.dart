@@ -82,9 +82,9 @@ class Sano {
   Future<void> _runApp() async {
     final Runtime runtime = _instance!.runtime;
     // 读取入口
-    final script = await bundle.read('app.js');
+    final script = await bundle.read('main.js');
     // 逻辑层入口
-    runtime.evaluateJavaScript(script, 'app.js');
+    runtime.evaluateJavaScript(script, 'main.js');
   }
 
   // 加载插件

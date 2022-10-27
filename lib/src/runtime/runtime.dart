@@ -15,7 +15,10 @@ class Runtime {
     int? maxStackSize,
     List<Plugin>? plugins,
   }) {
-    _init(plugins);
+    _init(
+      maxStackSize: maxStackSize,
+      plugins: plugins,
+    );
   }
 
   // 运行环境
@@ -50,7 +53,15 @@ class Runtime {
   }
 
   // 初始化
-  void _init(List<Plugin>? plugins) {
+  void _init({
+    int? maxStackSize,
+    List<Plugin>? plugins,
+  }) {
+    // 设置执行栈大小
+    if (maxStackSize != null) {
+      setStackSize(maxStackSize);
+    }
+
     library.updateStackTop(runtime);
     // 创建上下文
     _context = library.newContext(runtime);

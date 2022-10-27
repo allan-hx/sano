@@ -168,7 +168,7 @@ class NetworkBundle extends Bundle {
     // 判断是否是js文件 - js则移动文件
     if (extension == '.js') {
       final file = File(savePath);
-      await file.rename(path.join(_assetsPath, 'main.js'));
+      await file.rename(path.join(_assetsPath, path.basename(url)));
       return;
     }
 

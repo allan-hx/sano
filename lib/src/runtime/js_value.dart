@@ -53,9 +53,12 @@ class JSObject {
 
     malloc.free(keyPointer);
 
-    if (state == 1 && value is JSFunction) {
-      final String symbol = value.callback.hashCode.toString();
-      Observer.instance.on(symbol, value.callback!);
+    if (state == 1) {
+      if (value is JSFunction) {
+        final String symbol = value.callback.hashCode.toString();
+        Observer.instance.on(symbol, value.callback!);
+      }
+
       return true;
     }
 

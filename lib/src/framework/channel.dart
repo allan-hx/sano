@@ -2,7 +2,7 @@ import 'package:sano/sano.dart';
 import 'package:sano/src/plugins/index.dart';
 
 class Channel {
-  Channel(String name): name = 'channel:$name:';
+  Channel(String name): name = 'sano:channel:$name:';
 
   // 通道名称
   final String name;

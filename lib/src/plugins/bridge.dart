@@ -52,7 +52,8 @@ class Bridge extends Plugin {
     args ??= JSUndefined();
 
     // 调用js方法
-    final value = channel.call([JSString.create(context, method), args]) as T;
+    final name = JSString.create(context, method);
+    final value = channel.call([name, args]) as T;
 
     if (library.isException(value.pointer) == 0) {
       return value;
